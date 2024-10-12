@@ -51,13 +51,13 @@ while True:
 
         elif choice == 3: # extract each page as image from pdf
             userPdf = input("Enter pdf file name: ")
-            oldPDF = convert_from_path(userPdf, poppler_path= r"C:\Users\HP\OneDrive\Desktop\pythonCodes\smallProjects\Release-24.08.0-0\poppler-24.08.0\Library\bin")
+            oldPDF = convert_from_path(userPdf, poppler_path= r"C:\Projects\Release-24.08.0-0\poppler-24.08.0\Library\bin")
 
             for i in range(len(oldPDF)):
                 oldPDF[i].save("page"+str(i)+".jpg", "JPEG")
             print("The pages are extracted from the pdf by page nmumber.")
 
-        elif choice == 4: # merge multiple pdfs
+        elif choice == 4: # merge all pdfs present in your folder
             newPDF = Pdf.new()
 
             for file in glob("*.pdf"):
